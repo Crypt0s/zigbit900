@@ -1,0 +1,57 @@
+ATMEL Corporation Inc.
+
+This file contains release and version information for the Wireshark Sniffer Interface
+which is used to capture/sniff IEEE 802.15.4 Frames ( 2.4 GHZ & Sub Ghz)
+
+Support Contact: avr@atmel.com
+--------------------------------------------------------------------------------------------
+
+Release Version: 3.0.0.10
+Release Date: 2014-05-09
+
+System Requirements:
+=================================================================================
+- Wireshark Software installed - i.e, Wireshark-1.8.14 version(32bit or 64bit depending on the OS Installed) or later
+	
+Supported devices:
+===============================================================================
+1) RZ600 with RF231 Radio
+2) RZ600 with RF212 Radio
+3) ZigBit_RF233_USB
+4) ZigBit_RF212B_USB
+
+Package Contents:
+===============================================================================
+1) Atmel_Wireshark_Sniffer_Interface_Tool.exe
+2) Firmware hex files for RZ600(RF231 Radio), RZ600(RF212 Radio),ZigBit_RF233_USB,ZigBit_RF212B_USB
+3) Driver Files will be installed part of the Atmel Studio installation.
+4) Release Notes.txt
+
+Procedure : Steps to operate Wireshark Sniffer Interface
+===============================================================================
+1)  Install the Atmel Studio 6.0 or later and Connect RZ600/ZigBit_RF233/ZigBit_RF212B Kit to the computer
+2)  Device will enumerate as Virtual COM
+3)  Open->Atmel Sniffer Interface Tool -> Sniffer Firmware then Flash the firmware to the respective kit via JTAG. Close the Atmel Sniffer Interface Tool.
+4)  All Programs->Atmel->Atmel Wireshark Sniffer Interface Tool. Once the Tool is opened Select Sniffer Port & Baudrate then click Connect.
+5)  Select the channel starting from 11 to 26 for 2.4 Ghz and 0-10 for Sub Ghz from the drop down box, then select the data rate.
+6)  Click play to start capture  ( Start capture will automatically invoke wireshark instance for capture to begin)
+7)  Select Pause option to pause capture in wireshark display window.
+8)  Select play to display packets in wireshark
+9)  Select stop to stop capture
+10) If user needs to change the channel then press Stop, then select the channel and press play again.
+11) UI will prompt up a dialogue box to save the capture file or not( if capture happened in the previous channel/instance)
+12) User can save the capture file for future reference or continue without saving.
+
+Revision Changes: Revision 3.0.0.10
+===============================================================================
+1) Added RF212, RF212B Support.
+2) Enhanced the communication protocol exchange between the Host(UI) and device(Firmware)
+3) Timestamp for the captured frame will be provided.
+4) Application crash and port lock, pause and stop issues are resolved.
+5) Elapsed time added
+6) Sniffer help is added
+7) about window to know the version information & product info.
+8) Board Name, Radio Name, Sniffer Firmware version are displayed.
+9) No.of Pakets captured will be displayed.
+10) Save button will be present. If the user presses the save button it will stop the capture and user will be asked to save the data.
+
